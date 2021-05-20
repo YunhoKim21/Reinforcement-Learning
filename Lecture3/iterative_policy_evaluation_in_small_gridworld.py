@@ -15,6 +15,7 @@ for i in range(1000):
             if row == 3 and col == 3:
                 continue
             result = 0
+            # four equal probabilities of options
             result += valuefunction[max(row-1, 0)][col]
             result += valuefunction[min(row+1, 3)][col]
             result += valuefunction[row][max(col-1, 0)]
@@ -26,4 +27,3 @@ for i in range(1000):
         for v in row:
             print(v, end = ' ')
         print()
-    
