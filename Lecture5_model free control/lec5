@@ -17,3 +17,33 @@ GLIE : greedy in the limit with infinite exploration
 2. the polict converges on a greedy policy
 
 for example, epsilon-greedy is GLIE if epsilon reduces to zero at c_k = 1/k
+
+Q function vs Value function : Q function : state and action PAIR, Value function : only state included. 
+To evaluate the expected reward using value function, we must know the probability of what will happen, and that is often not provided, so we use Q function for model free control
+
+GLIE monte-carlo control -> updating Q function over every trial
+-> proven that it converges to optim
+
+in real coding, only Q function, not the pi(policy) is stored. pi(policy) is evaluated every time(epsilon-greedy)
+
+GLIE works better!!
+
+MC learning vs TD learning
+TD learning has sevearl advantages over MC
+-lower variance
+-online(okey with no termination)
+-incomplete sequences
+-dont need to wait until the sequence terminates
+-update every time step
+
+SARSA
+
+S,  A
+  R
+  S'
+
+  A'
+
+  Q(S, A) <- Q(S, A) + a(R+ gamma Q(S', A') - Q(S, A))
+
+SARSA : EVERY STEP of update(ex : every move in a chess), we update the Q function by SARSA(upper formula)
